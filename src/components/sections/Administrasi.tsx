@@ -31,12 +31,12 @@ const Administrasi: React.FC = () => {
                     <div key={index} className="flex gap-2">
 
                         {/* ANGKA */}
-                        <div className="bg-[#6EA1DF] text-black font-bold px-6 h-[58px] flex items-center justify-center rounded-[10px] min-w-[120px] text-lg">
+                        <div className="bg-[#6EA1DF] text-black font-bold px-6 h-58px flex items-center justify-center rounded-[10px] min-w-120px text-lg">
                             {item.value}
                         </div>
 
                         {/* LABEL */}
-                        <div className="bg-gray-300 px-6 h-[58px] flex items-center rounded-[10px] w-full font-medium">
+                        <div className="bg-gray-300 px-6 h-58px flex items-center rounded-[10px] w-full font-medium">
                             {item.label}
                         </div>
 

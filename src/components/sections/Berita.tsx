@@ -26,7 +26,7 @@ const Berita: React.FC = () => {
                         >
 
                             {/* IMAGE */}
-                            <div className="h-[200px] w-full overflow-hidden">
+                            <div className="h-200px w-full overflow-hidden">
                                 <img
                                     src={item.image}
                                     alt={item.title}

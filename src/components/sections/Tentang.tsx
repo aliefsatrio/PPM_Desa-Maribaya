@@ -22,7 +22,7 @@ const Tentang: React.FC = () => {
 
         {/* IMAGE */}
         <div className="flex justify-center md:justify-end">
-          <div className="w-[300px] md:w-[400px] lg:w-[500px] aspect-square bg-gray-300 rounded">
+          <div className="w-300px md:w-400px lg:w-500px aspect-square bg-gray-300 rounded">
             <div className="w-full h-full flex items-center justify-center text-gray-500">
               Foto desa
             </div>

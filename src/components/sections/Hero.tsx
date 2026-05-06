@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-[600px] overflow-hidden flex items-center justify-center">
+    <section className="relative h-600px overflow-hidden flex items-center justify-center">
 
       {/* SLIDE IMAGES */}
       {images.map((img, index) => (

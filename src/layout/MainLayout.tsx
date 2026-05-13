@@ -12,7 +12,7 @@ export default function MainLayout() {
 
             <footer>
                 <div className="bg-gray-800 text-white py-4 text-center">
-                    &copy; 2024 Desa Maribaya. All rights reserved.
+                    &copy; 2026 Desa Maribaya. All rights reserved.
                 </div>
             </footer>
         </div>

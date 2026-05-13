@@ -1,5 +1,4 @@
 import Navbar from "../components/ui/Navbar";
-import Footer from "../components/ui/Footer";
 
 import Hero from "../components/sections/Hero";
 import Tentang from "../components/sections/Tentang";
@@ -22,7 +21,6 @@ const Home = () => {
             <Administrasi />
             <APB />
             <Berita />
-            <Footer />
         </>
     );
 };

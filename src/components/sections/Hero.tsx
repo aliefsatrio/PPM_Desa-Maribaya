@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, Headphones } from "lucide-react";
 
-import hero1 from "../../assets/Hero1.webp";
-import hero2 from "../../assets/Hero2.webp";
-import hero3 from "../../assets/Hero3.webp";
+import hero1 from "../../assets/baldes.png";
+import hero2 from "../../assets/foto_unggas.png"
+import hero3 from "../../assets/baldes_2.png";
+import hero4 from "../../assets/selada.png"
 
 const Hero: React.FC = () => {
-  const images = [hero1, hero2, hero3];
+  const images = [hero1, hero2, hero3, hero4];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {

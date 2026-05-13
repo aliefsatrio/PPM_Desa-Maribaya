@@ -8,33 +8,32 @@ const Navbar: React.FC = () => {
   const location = useLocation(); // 2. Panggil useLocation
 
   // 3. Cek apakah kita di halaman beranda
-  const isHome = location.pathname === "/"; 
-  
+  const isHome = location.pathname === "/";
+
   // 4. Logika penentu: Navbar solid JIKA di-scroll ATAU JIKA BUKAN di halaman beranda
-  const isSolid = scrolled || !isHome; 
+  const isSolid = scrolled || !isHome;
 
   const activeStyle = "text-blue-600";
   const defaultStyle = isSolid ? "text-black" : "text-white";
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
+
+    // cek posisi scroll saat route berubah
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full z-50 transition-all duration-300
-        ${isSolid ? "bg-[#6EA1DF] shadow-md py-3" : "bg-transparent py-5"}
+        fixed top-0 left-0 w-full z-50
+        ${isSolid ? "bg-[#6EA1DF] py-5" : "bg-transparent py-5"}
       `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-20">
@@ -74,7 +73,7 @@ const Navbar: React.FC = () => {
           <li className="flex items-center">
             <Link to="/berita" className="hover:opacity-75 transition-opacity">Berita</Link>
           </li>
-          
+
           <li className="flex items-center">
             <NavLink
               to="/login"

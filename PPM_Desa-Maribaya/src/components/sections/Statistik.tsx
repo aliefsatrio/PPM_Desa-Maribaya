@@ -1,7 +1,7 @@
 import React from "react";
 import { LayoutList } from "lucide-react";
 import { Link } from "react-router-dom";
-import kades from "../../assets/andi.jpg"
+import kades from "../../assets/Andi baik.png";
 
 const dataSOTK = [
   {

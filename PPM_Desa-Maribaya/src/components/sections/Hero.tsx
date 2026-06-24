@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowLeft, ArrowRight, Headphones } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import hero1 from "../../assets/baldes.png";
 import hero2 from "../../assets/foto_unggas.png"
@@ -90,13 +90,6 @@ const Hero: React.FC = () => {
           />
         ))}
       </div>
-
-      {/* BUTTON PENGADUAN */}
-      {/* PERBAIKAN 5: Posisi dibuat responsif agar tidak menabrak panah kanan di layar kecil */}
-      <button className="absolute top-24 md:top-auto md:bottom-8 right-4 md:right-8 bg-blue-600 text-white px-5 py-2.5 rounded-lg flex items-center gap-2 z-20 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all font-medium">
-        <Headphones size={18} />
-        Pengaduan
-      </button>
     </section>
   );
 };

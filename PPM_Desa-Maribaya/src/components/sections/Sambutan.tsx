@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/download.png"; 
+import Andibaik from "../../assets/Andi baik.png";
 const Sambutan: React.FC = () => {
   return (
     <section className="px-6 md:px-20 py-20 bg-white">
@@ -10,7 +10,7 @@ const Sambutan: React.FC = () => {
         <div className="flex justify-center md:justify-start ml-20">
           <div className="w-300px md:w-400px lg:w-500px aspect-square rounded">
             <div className="w-full h-full  flex items-center justify-center text-gray-500">
-              <img src={logo} alt="Logo Desa" />
+              <img src={Andibaik} alt="Andi Mijaya" />
             </div>
           </div>
         </div>

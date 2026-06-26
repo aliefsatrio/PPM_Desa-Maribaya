@@ -50,7 +50,7 @@ export default function LoginForm() {
         setMessage("Login berhasil");
 
         setTimeout(() => {
-          navigate("/akun");
+          navigate("/dashboard");
         }, 1000);
 
         return;

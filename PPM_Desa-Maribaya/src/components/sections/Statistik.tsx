@@ -9,15 +9,15 @@ const dataSOTK = [
     image: kades,
   },
   {
-    title: "Struktur BPD",
+    title: "Sekretaris Desa",
+    image: "/images/sotk-sekdes.webp",
+  },
+  {
+    title: "Ketua BPD",
     image: "/images/sotk-bpd.webp",
   },
   {
-    title: "Struktur BPD",
-    image: "/images/sotk-bpd.webp",
-  },
-  {
-    title: "Struktur BPD",
+    title: "Wakil Ketua BPD",
     image: "/images/sotk-bpd.webp",
   },
 ];
@@ -60,7 +60,7 @@ const Statistik: React.FC = () => {
 
       <div className="mt-8 flex justify-end">
         <Link
-          to="/profil/sotk"
+          to="/Profil_desa"
           className="flex items-center gap-2 text-black hover:underline"
         >
           <LayoutList size={18} />

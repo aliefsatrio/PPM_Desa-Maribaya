@@ -31,8 +31,14 @@ const APB: React.FC = () => {
                         </h3>
                     </div>
 
-                    <div className="bg-[#D9D9D9] rounded-md px-6 py-4 w-full max-w-665px">
+                    <div className="bg-[#D9D9D9] rounded-md px-6 py-4 mb-3 w-full max-w-665px">
                         <p className="text-sm text-gray-700">Belanja Desa</p>
+                        <h3 className="text-2xl font-bold text-right">
+                            Rp 10.000.000.000
+                        </h3>
+                    </div>
+                    <div className="bg-[#D9D9D9] rounded-md px-6 py-4 w-full max-w-665px">
+                        <p className="text-sm text-gray-700">Surplus</p>
                         <h3 className="text-2xl font-bold text-right">
                             Rp 10.000.000.000
                         </h3>

@@ -2,6 +2,8 @@ import React from "react";
 import { LayoutList } from "lucide-react";
 import { Link } from "react-router-dom";
 import kades from "../../assets/Andi baik.png";
+import sekdes from "../../assets/sekdes.jpeg";
+import bpd from "../../assets/ketua_bpd.jpeg";
 
 const dataSOTK = [
   {
@@ -10,11 +12,11 @@ const dataSOTK = [
   },
   {
     title: "Sekretaris Desa",
-    image: "/images/sotk-sekdes.webp",
+    image: sekdes,
   },
   {
     title: "Ketua BPD",
-    image: "/images/sotk-bpd.webp",
+    image: bpd,
   },
   {
     title: "Wakil Ketua BPD",

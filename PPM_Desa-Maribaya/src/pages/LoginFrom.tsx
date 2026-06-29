@@ -39,8 +39,8 @@ export default function LoginForm() {
 
       // Dummy login
       if (
-        data.email === "admin@gmail.com" &&
-        data.password === "admin123"
+        data.email === "galuh@gmail.com" &&
+        data.password === "galuh123"
       ) {
         localStorage.setItem(
           "token",
@@ -50,7 +50,7 @@ export default function LoginForm() {
         setMessage("Login berhasil");
 
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("/");
         }, 1000);
 
         return;

@@ -1,4 +1,5 @@
 import { LayoutDashboard, LogOut, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { moduleConfigs } from '../../services/modules';
 import { useAuthStore } from '../../store/authStore';
@@ -14,17 +15,15 @@ export function Sidebar({ collapsed, mobileOpen, onToggleCollapse, onCloseMobile
   const logout = useAuthStore((state) => state.logout);
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
-    `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-      isActive ? 'bg-primary-50 text-primary-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
+    `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${isActive ? 'bg-primary-50 text-primary-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
     }`;
 
   return (
     <>
       <div className={`fixed inset-0 z-30 bg-slate-950/40 transition lg:hidden ${mobileOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`} onClick={onCloseMobile} />
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex border-r border-slate-100 bg-white transition-all duration-300 lg:translate-x-0 ${
-          collapsed ? 'lg:w-20' : 'lg:w-72'
-        } ${mobileOpen ? 'translate-x-0' : '-translate-x-full'} w-72`}
+        className={`fixed inset-y-0 left-0 z-40 flex border-r border-slate-100 bg-white transition-all duration-300 lg:translate-x-0 ${collapsed ? 'lg:w-20' : 'lg:w-72'
+          } ${mobileOpen ? 'translate-x-0' : '-translate-x-full'} w-72`}
       >
         <div className="flex min-h-0 w-full flex-col">
           <div className="flex h-16 items-center justify-between border-b border-slate-100 px-4">
@@ -59,14 +58,16 @@ export function Sidebar({ collapsed, mobileOpen, onToggleCollapse, onCloseMobile
             })}
           </nav>
 
-          <div className="border-t border-slate-100 p-3">
+          <div className="border-t border-slate-100 p-3" >
             <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-rose-50 hover:text-rose-700" onClick={logout}>
-              <LogOut size={19} />
-              <span className={collapsed ? 'lg:hidden' : ''}>Logout</span>
+              <Link to="/akun">
+                <LogOut size={19} />
+                <span className={collapsed ? 'lg:hidden' : ''}>Logout</span>
+              </Link>
             </button>
           </div>
         </div>
-      </aside>
+      </aside >
     </>
   );
 }

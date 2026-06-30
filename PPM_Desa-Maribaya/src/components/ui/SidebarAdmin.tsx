@@ -60,7 +60,7 @@ export function Sidebar({ collapsed, mobileOpen, onToggleCollapse, onCloseMobile
 
           <div className="border-t border-slate-100 p-3" >
             <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-rose-50 hover:text-rose-700" onClick={logout}>
-              <Link to="/akun">
+              <Link to="/logout">
                 <LogOut size={19} />
                 <span className={collapsed ? 'lg:hidden' : ''}>Logout</span>
               </Link>

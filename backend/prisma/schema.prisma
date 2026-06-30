@@ -32,3 +32,11 @@ model DataWargaDesaMaribaya {
 
   @@map("data_warga_desa_maribaya")
 }
+model APBDES{
+  NO_ID BigInt @id @default(autoincrement())
+  PEMASUKAN Int?
+  PENGELUARAN Int?
+  SURPLUS Int?
+
+ @@map("apbdes")
+}

@@ -17,7 +17,7 @@ const Berita: React.FC = () => {
                 </p>
 
                 {/* GRID */}
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-3 gap-6 ">
 
                     {beritaData.map((item) => (
                         <div

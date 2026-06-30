@@ -17,6 +17,7 @@ import PendudukPage from "./pages/Admin/PendudukPage";
 import BeritaPage from "./pages/Admin/BeritaPage";
 import VisiMisiPage from "./pages/Admin/VisiMisiPage";
 import ApbdesPage from "./pages/Admin/APBDesa";
+import AdminLogout from "./pages/AdminLogout";
 
 function App() {
   return (
@@ -28,7 +29,11 @@ function App() {
           <Route path="Profil_desa" element={<ProfilDesa />} />
           <Route path="berita" element={<Berita />} />
           <Route path="login" element={<LoginForm />} />
-          <Route path="infografis" element={<Infografis />} />
+          <Route path="infografis" element={<Infografis />} />     {/* Halaman yang wajib login */}
+          <Route element={<ProtectedRoutes />}>
+            <Route path="akun" element={<Akun />} />
+            <Route path="layanan/:slug" element={<DetailLayanan />} />
+          </Route>
         </Route>
 
         {/* Dashboard Admin */}
@@ -38,13 +43,9 @@ function App() {
            <Route path="admin/berita" element={<BeritaPage />} />
            <Route path="visi-misi" element={<VisiMisiPage />} />
            <Route path="apbdes" element={<ApbdesPage />} />
+           <Route path="logout" element = {<AdminLogout/>} />
 
-          {/* Halaman yang wajib login */}
-          <Route element={<ProtectedRoutes />}>
-            <Route path="akun" element={<Akun />} />
-            <Route path="layanan/:slug" element={<DetailLayanan />} />
-          </Route>
-        </Route>
+        </Route> 
       </Routes>
     </Router>
   );

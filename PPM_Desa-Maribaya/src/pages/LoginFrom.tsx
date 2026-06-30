@@ -27,41 +27,68 @@ export default function LoginForm() {
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
   });
+const onSubmit = async (data: LoginFormData) => {
+  try {
+    setMessage("");
 
-  const onSubmit = async (data: LoginFormData) => {
-    try {
-      setMessage("");
+    // Simulasi request API
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // Simulasi request API
-      await new Promise((resolve) =>
-        setTimeout(resolve, 1000)
+    // Login Admin
+    if (
+      data.email === "admin@gmail.com" &&
+      data.password === "admin123"
+    ) {
+      localStorage.setItem("token", "admin-token");
+      localStorage.setItem("role", "admin");
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: "Administrator",
+          email: "admin@gmail.com",
+          role: "admin123",
+        })
       );
 
-      // Dummy login
-      if (
-        data.email === "galuh@gmail.com" &&
-        data.password === "galuh123"
-      ) {
-        localStorage.setItem(
-          "token",
-          "dummy-token"
-        );
+      setMessage("Login Admin berhasil");
 
-        setMessage("Login berhasil");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
 
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-
-        return;
-      }
-
-      setMessage("Email atau password salah");
-    } catch (error) {
-      setMessage("Terjadi kesalahan");
-      console.error(error);
+      return;
     }
-  };
+
+    // Login User
+    if (
+      data.email === "galuh@gmail.com" &&
+      data.password === "galuh123"
+    ) {
+      localStorage.setItem("token", "user-token");
+      localStorage.setItem("role", "user");
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: "Galuh",
+          email: "galuh@gmail.com",
+          role: "user",
+        })
+      );
+
+      setMessage("Login User berhasil");
+
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+
+      return;
+    }
+
+    setMessage("Email atau password salah.");
+  } catch (error) {
+    setMessage("Terjadi kesalahan.");
+  }
+};
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100 px-4">

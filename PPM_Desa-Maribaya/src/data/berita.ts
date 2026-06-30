@@ -15,9 +15,9 @@ export const beritaData = [
   },
   {
     id: 3,
-    title: "Program Kebersihan Lingkungan",
-    date: "5 Mar 2026",
-    desc: "Gerakan bersama menjaga kebersihan lingkungan desa.",
-    image: "/images/berita3.jpg",
+    title: "Program BUMDes",
+    date: "5 Mar 2025",
+    desc: "Program BUMDes yang berkolaborasi dengan salah satu pemuda yang bergerak dibidang tanaman hidroponik.",
+    image: "src/assets/selada.png",
   },
 ];

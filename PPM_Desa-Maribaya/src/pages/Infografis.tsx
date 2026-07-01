@@ -53,25 +53,9 @@ const apb = [
 
 const layanan = [
   {
-    title: "Surat Pengantar",
-    path: "/layanan/surat-pengantar",
-  },
-  {
-    title: "Layanan Kependudukan",
-    path: "/layanan/kependudukan",
-  },
-  {
-    title: "DTKS",
-    path: "/layanan/dtks",
-  },
-  {
     title: "Aspirasi Warga",
     path: "/layanan/aspirasi-warga",
-  },
-  {
-    title: "Pengajuan Bantuan",
-    path: "/layanan/pengajuan-bantuan",
-  },
+  }
 ];
 const bantuanSosial = [
   {
@@ -185,7 +169,7 @@ export default function Infografis() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-slate-200 h-48">
             <h2 className="text-2xl font-bold text-slate-800">Layanan Warga</h2>
 
             <p className="mt-2 text-sm text-slate-500">

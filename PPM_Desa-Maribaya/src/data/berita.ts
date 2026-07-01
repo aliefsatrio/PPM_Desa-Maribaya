@@ -20,4 +20,11 @@ export const beritaData = [
     desc: "Program BUMDes yang berkolaborasi dengan salah satu pemuda yang bergerak dibidang tanaman hidroponik.",
     image: "src/assets/selada.png",
   },
+  {
+    id: 4,
+    title: "Pembaruan Seputar Pariwisata Pantai Maribaya",
+    date: "8 Agustus 2023",
+    desc: "Di sini selain pantai, sepanjang jalan menuju pantai kita bisa menemui budidaya tambak udang, dan dari kejauhan terlihat galangan kapal.",
+    image: "src/assets/pantai.jpg",
+  },
 ];

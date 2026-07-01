@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { UserCircle } from "lucide-react";
 import logo from "../../assets/download.png";
 
 const Navbar: React.FC = () => {
@@ -118,15 +117,6 @@ const Navbar: React.FC = () => {
                 }`
               }
             >
-              <UserCircle
-                size={26}
-                strokeWidth={2}
-                className={
-                  isLoggedIn
-                    ? "text-green-600"
-                    : ""
-                }
-              />
             </NavLink>
 
             {isLoggedIn && (

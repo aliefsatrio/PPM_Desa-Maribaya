@@ -2,58 +2,12 @@ import { Link, useParams } from "react-router-dom";
 
 const layananData = [
   {
-    slug: "surat-pengantar",
-    title: "Surat Pengantar",
-    desc: "Layanan untuk pengajuan surat pengantar dari kelurahan.",
-    file: "/dokumen/surat-pengantar.pdf",
-    requirements: [
-      "Fotokopi KTP",
-      "Fotokopi KK",
-      "Surat pengantar RT/RW",
-      "Mengisi formulir permohonan",
-    ],
-  },
-  {
-    slug: "kependudukan",
-    title: "Layanan Kependudukan",
-    desc: "Layanan administrasi data kependudukan masyarakat.",
-    file: "/dokumen/kependudukan.pdf",
-    requirements: [
-      "Fotokopi KTP",
-      "Fotokopi KK",
-      "Dokumen pendukung sesuai kebutuhan",
-    ],
-  },
-  {
-    slug: "dtks",
-    title: "DTKS",
-    desc: "Layanan terkait Data Terpadu Kesejahteraan Sosial.",
-    file: "/dokumen/dtks.pdf",
-    requirements: [
-      "Fotokopi KTP",
-      "Fotokopi KK",
-      "Surat keterangan tidak mampu jika diperlukan",
-    ],
-  },
-  {
     slug: "aspirasi-warga",
     title: "Aspirasi Warga",
     desc: "Layanan untuk menyampaikan kritik, saran, dan aspirasi masyarakat.",
     file: "/dokumen/aspirasi-warga.pdf",
-    requirements: ["Nama lengkap", "Nomor HP aktif", "Isi aspirasi atau keluhan"],
-  },
-  {
-    slug: "pengajuan-bantuan",
-    title: "Pengajuan Bantuan",
-    desc: "Layanan untuk pengajuan bantuan sosial atau bantuan masyarakat.",
-    file: "/dokumen/pengajuan-bantuan.pdf",
-    requirements: [
-      "Fotokopi KTP",
-      "Fotokopi KK",
-      "Surat keterangan pendukung",
-      "Dokumen tambahan sesuai jenis bantuan",
-    ],
-  },
+    requirements: ["Nama lengkap", "Wilayah RT dan RW", "Isi aspirasi atau keluhan", "Gunakan bahasa yang sopan, santun dan jelas"],
+  }
 ];
 
 export default function DetailLayanan() {
@@ -113,13 +67,12 @@ export default function DetailLayanan() {
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 lg:col-span-2">
             <h2 className="text-2xl font-bold text-slate-800">
-              Persyaratan
+              Rules Pengajuan Aspirasi
             </h2>
 
             <p className="mt-2 text-sm text-slate-500">
-              Berikut dokumen yang perlu disiapkan sebelum mengajukan layanan.
+              Berikut adalah format untuk menyampaikan aspirasi atau keluhan kepada pihak desa.
             </p>
-
             <div className="mt-6 space-y-3">
               {layanan.requirements.map((item, index) => (
                 <div
@@ -138,28 +91,21 @@ export default function DetailLayanan() {
 
           <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
             <h2 className="text-xl font-bold text-slate-800">
-              Dokumen Layanan
+              Pengajuan Aspirasi
             </h2>
 
             <p className="mt-2 text-sm text-slate-500">
-              Silakan unduh formulir atau dokumen pendukung layanan.
+              Silakan bisa hubungi nomor WhatsApp berikut untuk mengajukan aspirasi atau keluhan.
+              <b>Serta jangan lupa memperkenalkan diri dengan menyebutkan nama dan wilayah RT atau RW tempat tinggalmu. </b>
             </p>
 
             <a
-              href={layanan.file}
+              href="https://wa.me/6289652848630?text=Halo%20Admin,%20saya%20ingin%20bertanya%20mengenai%20layanan."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 block w-full rounded-lg border border-green-600 px-4 py-3 text-center text-sm font-semibold text-green-700 hover:bg-green-50"
             >
-              Lihat PDF
-            </a>
-
-            <a
-              href={layanan.file}
-              download
-              className="mt-3 block w-full rounded-lg bg-green-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-green-700"
-            >
-              Download PDF
+              Hubungi via WhatsApp
             </a>
           </div>
         </div>

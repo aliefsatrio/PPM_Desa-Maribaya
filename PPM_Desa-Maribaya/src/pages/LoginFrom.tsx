@@ -17,7 +17,7 @@ export default function LoginForm() {
 
   // Jika sudah login langsung ke akun
   if (token) {
-    return <Navigate to="/akun" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   const {
@@ -27,68 +27,40 @@ export default function LoginForm() {
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
   });
-const onSubmit = async (data: LoginFormData) => {
-  try {
-    setMessage("");
+  const onSubmit = async (data: LoginFormData) => {
+    try {
+      setMessage("");
 
-    // Simulasi request API
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Simulasi request API
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Login Admin
-    if (
-      data.email === "admin@gmail.com" &&
-      data.password === "admin123"
-    ) {
-      localStorage.setItem("token", "admin-token");
-      localStorage.setItem("role", "admin");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          name: "Administrator",
-          email: "admin@gmail.com",
-          role: "admin123",
-        })
-      );
+      // Login Admin
+      if (
+        data.email === "admin@gmail.com" &&
+        data.password === "admin123"
+      ) {
+        localStorage.setItem("token", "admin-token");
+        localStorage.setItem("role", "admin");
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            name: "Administrator",
+            email: "admin@gmail.com",
+            role: "admin",
+          })
+        );
 
-      setMessage("Login Admin berhasil");
+        setMessage("Login Admin berhasil");
 
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 1000);
+        navigate("/dashboard", { replace: true });
 
-      return;
+        return;
+      }
+      setMessage("Email atau password salah.");
+    } catch (error) {
+      setMessage("Terjadi kesalahan.");
     }
-
-    // Login User
-    if (
-      data.email === "galuh@gmail.com" &&
-      data.password === "galuh123"
-    ) {
-      localStorage.setItem("token", "user-token");
-      localStorage.setItem("role", "user");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          name: "Galuh",
-          email: "galuh@gmail.com",
-          role: "user",
-        })
-      );
-
-      setMessage("Login User berhasil");
-
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-
-      return;
-    }
-
-    setMessage("Email atau password salah.");
-  } catch (error) {
-    setMessage("Terjadi kesalahan.");
-  }
-};
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100 px-4">
@@ -120,10 +92,9 @@ const onSubmit = async (data: LoginFormData) => {
               placeholder="Masukkan email"
               {...register("email")}
               className={`w-full rounded-lg border px-4 py-3 outline-none transition
-                ${
-                  errors.email
-                    ? "border-red-500 focus:ring-2 focus:ring-red-200"
-                    : "border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                ${errors.email
+                  ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                  : "border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
                 }`}
             />
 
@@ -149,10 +120,9 @@ const onSubmit = async (data: LoginFormData) => {
               placeholder="Masukkan password"
               {...register("password")}
               className={`w-full rounded-lg border px-4 py-3 outline-none transition
-                ${
-                  errors.password
-                    ? "border-red-500 focus:ring-2 focus:ring-red-200"
-                    : "border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                ${errors.password
+                  ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                  : "border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
                 }`}
             />
 
@@ -178,11 +148,10 @@ const onSubmit = async (data: LoginFormData) => {
         {/* Message */}
         {message && (
           <div
-            className={`mt-5 rounded-lg p-3 text-center font-medium ${
-              message === "Login berhasil"
+            className={`mt-5 rounded-lg p-3 text-center font-medium ${message === "Login berhasil"
                 ? "bg-green-100 text-green-700"
                 : "bg-red-100 text-red-700"
-            }`}
+              }`}
           >
             {message}
           </div>
